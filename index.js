@@ -1,20 +1,11 @@
 module.exports = ignore
-ignore.extension = extension
-
-function extension (path) {
-  if (path.lastIndexOf('.') > path.lastIndexOf('/')) {
-    return true
-  }
-
-  return false
-}
 
 function ignore (paths, ignores) {
   let result = []
   let edge = String.prototype
 
   for (let ignore of ignores) {
-    if (extension(ignore)) {
+    if (ignore.lastIndexOf('.') > ignore.lastIndexOf('/')) {
       edge = edge.endsWith
     } else {
       edge = edge.startsWith
