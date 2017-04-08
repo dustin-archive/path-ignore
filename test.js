@@ -1,10 +1,10 @@
 const tape = require('tape')
-const diff = require('./')
+const ignore = require('./')
 
-tape('diff', t => {
+tape('ignore', t => {
   t.plan(4)
   t.same(
-    diff(
+    ignore(
       [ 'foo/bar/baz.txt', 'bar/baz/foo.txt', 'baz/foo/bar.txt' ],
       [ 'bar' ]
     ),
@@ -12,7 +12,7 @@ tape('diff', t => {
     'ingore root path'
   )
   t.same(
-    diff(
+    ignore(
       [ 'foo/bar/baz.txt', 'bar/baz/foo.txt', 'baz/foo/bar.txt' ],
       [ 'bar/baz/foo.txt' ]
     ),
@@ -20,7 +20,7 @@ tape('diff', t => {
     'ingore entire path'
   )
   t.same(
-    diff(
+    ignore(
       [ 'foo/bar/baz.txt', 'bar/baz/foo.txt', 'baz/foo/bar.txt' ],
       [ 'foo.txt' ]
     ),
@@ -28,7 +28,7 @@ tape('diff', t => {
     'ingore file'
   )
   t.same(
-    diff(
+    ignore(
       [ 'foo/bar/baz.txt', 'bar/baz/foo.txt', 'baz/foo/bar.txt' ],
       [ 'qux' ]
     ),
