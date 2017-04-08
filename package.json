@@ -1,0 +1,12 @@
+{
+  "name": "path-ignore",
+  "version": "0.0.0",
+  "description": "remove ignored paths",
+  "main": "index.js",
+  "repository": "https://github.com/whaaaley/path-diff.git",
+  "author": "Dustin Dowell <dustindowell22@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tape": "^4.6.3"
+  }
+}

@@ -1,3 +1,3 @@
-# path-diff
+# path-ignore
 
-> diff paths and globs
+> remove ignored paths
