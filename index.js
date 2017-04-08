@@ -1,6 +1,4 @@
-module.exports = ignore
-
-function ignore (paths, ignores) {
+module.exports = function (paths, ignores) {
   let result = []
   let edge = String.prototype
 
