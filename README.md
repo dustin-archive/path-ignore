@@ -1,2 +1,3 @@
-# path-differ
-diff paths and globs
+# path-diff
+
+> diff paths and globs
