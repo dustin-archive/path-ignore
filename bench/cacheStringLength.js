@@ -1,25 +1,19 @@
 const bench = require('nanobench')
 
-function testify () {
-  return true
-}
-
-function createArray (value) {
-  let result = []
+function createString (value) {
+  let result = ''
   for (let i = 0; i < value; i++) {
-    result[i] = i
+    result += i
   }
   return result
 }
 
-let arr = createArray(16)
+let str = createString(16)
 
 bench('cached 100,000,000', function (b) {
   b.start()
   for (let x = 0; x < 100000000; x++) {
-    for (let i = 0, length = arr.length; i < length; i++) {
-      testify()
-    }
+    for (let i = 0, length = str.length; i < length; i++);
   }
   b.end()
 })
@@ -27,9 +21,7 @@ bench('cached 100,000,000', function (b) {
 bench('uncached 100,000,000', function (b) {
   b.start()
   for (let x = 0; x < 100000000; x++) {
-    for (let i = 0; i < arr.length; i++) {
-      testify()
-    }
+    for (let i = 0; i < str.length; i++);
   }
   b.end()
 })

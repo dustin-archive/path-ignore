@@ -10,7 +10,7 @@ module.exports = function (paths, ignores) {
   let result = []
   let edge
 
-  for (let i = 0; i < ignores.length; i++) {
+  for (let i = 0, length = ignores.length; i < length; i++) {
     let ignore = ignores[i]
 
     if (ignore.lastIndexOf('.') > ignore.lastIndexOf('/')) {
@@ -19,7 +19,7 @@ module.exports = function (paths, ignores) {
       edge = startsWith
     }
 
-    for (let j = 0; j < paths.length; j++) {
+    for (let j = 0, length = paths.length; j < length; j++) {
       let path = paths[j]
 
       if (!edge(path, ignore)) {
